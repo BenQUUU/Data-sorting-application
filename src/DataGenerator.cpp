@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <random>
-#include "DataGenerator.hpp"
+#include "../include/DataGenerator.hpp"
 
 DataGenerator::DataGenerator(unsigned int size): vector_size(size){}
 
