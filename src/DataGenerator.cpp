@@ -3,7 +3,7 @@
 #include <random>
 #include "../include/DataGenerator.hpp"
 
-DataGenerator::DataGenerator(unsigned int size): vector_size(size){}
+DataGenerator::DataGenerator(size_t size): vector_size(size){}
 
 int DataGenerator::generate_number_to_vector(){
     std::random_device rd;
@@ -18,7 +18,7 @@ int DataGenerator::generate_number_to_vector(){
 std::vector<int> DataGenerator::generate_vector(){
     std::vector<int> data;
 
-    for(std::size_t i = 0; i < vector_size; i++){
+    for(size_t i = 0; i < vector_size; i++){
         int number = generate_number_to_vector();
         data.push_back(number);
     }
