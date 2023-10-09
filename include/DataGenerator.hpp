@@ -5,7 +5,7 @@
 
 class DataGenerator{
 private:
-    size_t vector_size = 0;
+    size_t vector_size{0};
 public:
     DataGenerator(size_t size);
     int generate_number_to_vector();

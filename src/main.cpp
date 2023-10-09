@@ -3,6 +3,7 @@
 #include "../include/BubbleSort.hpp"
 #include "../include/DataGenerator.hpp"
 #include "../include/QuickSort.hpp"
+#include "../include/HeapSort.hpp"
 
 /**
  * /author Michał Kolczak
@@ -10,24 +11,35 @@
 
 
 int main(){
-    unsigned int size = 1000;
+    unsigned int size = 1000000;
     DataGenerator cosik(size);
     std::vector<int> data = cosik.generate_vector();
-    // for(int i = 0; i < size; i++){
-    //     std::cout << data[i] << " ";
+    //std::vector<char> data = {'b', 'a', 'y', 'f'};
+    // for(auto element: data){
+    //     std::cout << element << " ";
     // }
     // std::cout << std::endl;
 
-    // BubbleSort cos;
+    // BubbleSort<int> cos;
     // std::vector<int> arr = cos.sort(data);
-    //  for(int i = 0; i < size; i++){
-    //     std::cout << arr[i] << " ";
+    //  for(auto element: arr){
+    //     std::cout << element << " ";
     // }
 
-    QuickSort cos;
-    std::vector<int> arr = cos.sort(data, 0, size - 1);
-    for(size_t i = 0; i < size; i++){
-        std::cout << arr[i] << " ";
+    // QuickSort<int> cos;
+    // cos.sort(data, 0, size - 1);
+
+    // for(auto element: data){
+    //     std::cout << element << " ";
+    // }
+
+    // std::cout << std::endl;
+
+    HeapSort<int> cos;
+    cos.sort(data);
+
+    for(auto element: data){
+        std::cout << element << " ";
     }
 
     std::cout << std::endl;
