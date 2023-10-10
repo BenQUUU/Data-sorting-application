@@ -4,6 +4,7 @@
 #include "../include/DataGenerator.hpp"
 #include "../include/QuickSort.hpp"
 #include "../include/HeapSort.hpp"
+#include "../include/CountingSort.hpp"
 
 /**
  * /author Michał Kolczak
@@ -11,7 +12,7 @@
 
 
 int main(){
-    unsigned int size = 1000000;
+    unsigned int size = 10;
     DataGenerator cosik(size);
     std::vector<int> data = cosik.generate_vector();
     //std::vector<char> data = {'b', 'a', 'y', 'f'};
@@ -29,13 +30,16 @@ int main(){
     // QuickSort<int> cos;
     // cos.sort(data, 0, size - 1);
 
-    // for(auto element: data){
-    //     std::cout << element << " ";
-    // }
+    for(auto element: data){
+        std::cout << element << " ";
+    }
 
-    // std::cout << std::endl;
+    std::cout << std::endl;
 
-    HeapSort<int> cos;
+    // HeapSort<char> cos;
+    // cos.sort(data);
+
+    CountingSort<int> cos;
     cos.sort(data);
 
     for(auto element: data){
