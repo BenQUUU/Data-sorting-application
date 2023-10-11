@@ -40,6 +40,6 @@ void Menu::menuInitialization(){
         auto stop = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start);
 
-        std::cout << "Czas sortowania algorytmem " << algorithm->getName() << ": " << duration.count() << " mikrosekund" << std::endl << std::endl;
+        std::cout << "Algorithm sorting time " << algorithm->getName() << ": " << duration.count() << " microseconds" << std::endl << std::endl;
     }
 }
