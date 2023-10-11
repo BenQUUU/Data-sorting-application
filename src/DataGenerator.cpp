@@ -8,7 +8,7 @@ DataGenerator::DataGenerator(size_t size): vector_size(size){}
 int DataGenerator::generate_number_to_vector(){
     std::random_device rd;
     std::mt19937 generator(rd());
-    std::uniform_int_distribution<int> distribution(1, 1000); //numbers 1 - 100
+    std::uniform_int_distribution<int> distribution(1, 1000); //numbers 1 - 1000
 
     int random_number = distribution(generator);
 
