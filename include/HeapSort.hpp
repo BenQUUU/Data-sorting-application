@@ -2,14 +2,22 @@
 #define HEAPSORT_HPP
 
 #include <vector>
+#include <string>
+#include "SortBase.hpp"
 
 template<class T>
-class HeapSort{
+class HeapSort : public SortBase<T>{
 private:
     void heapify(std::vector<T>& arr, int n, int i);
 public:
-    void sort(std::vector<T>& arr);
+    void sort(std::vector<T>& arr) override;
+    std::string getName() const override;
 };
+
+template<class T>
+std::string HeapSort<T>::getName() const{
+    return "Heap Sort";
+}
 
 template<class T>
 void HeapSort<T>::heapify(std::vector<T>& arr, int n, int i){

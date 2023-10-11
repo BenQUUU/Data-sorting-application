@@ -2,12 +2,20 @@
 #define COUNTINGSORT_HPP
 
 #include <vector>
+#include <string>
+#include "SortBase.hpp"
 
 template<class T>
-class CountingSort{
+class CountingSort : public SortBase<T>{
 public:
-    void sort(std::vector<T>& arr);
+    void sort(std::vector<T>& arr) override;
+    std::string getName() const override;
 };
+
+template<class T>
+std::string CountingSort<T>::getName() const{
+    return "Counting Sort";
+}
 
 template<class T>
 void CountingSort<T>::sort(std::vector<T>& arr){

@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(include)
 
-add_executable(Data_sorting_application src/main.cpp src/DataGenerator.cpp)
+add_executable(Data_sorting_application src/main.cpp src/DataGenerator.cpp src/Menu.cpp)

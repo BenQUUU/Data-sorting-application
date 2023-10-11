@@ -2,12 +2,20 @@
 #define BUBBLESORT_HPP
 
 #include <vector>
+#include <string>
+#include "SortBase.hpp"
 
 template<class T>
-class BubbleSort{
+class BubbleSort : public SortBase<T>{
 public:
-    void sort(std::vector<T>& arr);
+    void sort(std::vector<T>& arr) override;
+    std::string getName() const override;
 };
+
+template<class T>
+std::string BubbleSort<T>::getName() const{
+    return "Bubble Sort";
+}
 
 template<class T>
 void BubbleSort<T>::sort(std::vector<T>& arr){

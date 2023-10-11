@@ -2,14 +2,25 @@
 #define MERGESORT_HPP
 
 #include <vector>
+#include <string>
+#include "SortBase.hpp"
 
 template<class T>
-class MergeSort{
+class MergeSort : public SortBase<T>{
 private:
     void merge(std::vector<T>& arr, int left, int middle, int right);
-public:
     void sort(std::vector<T>& arr, int left, int right);
+public:
+    void sort(std::vector<T>& arr) override {
+        sort(arr, 0, arr.size() - 1);
+    }
+    std::string getName() const override;
 };
+
+template<class T>
+std::string MergeSort<T>::getName() const{
+    return "Merge Sort";
+}
 
 template<class T>
 void MergeSort<T>::merge(std::vector<T>& arr, int left, int middle, int right){
