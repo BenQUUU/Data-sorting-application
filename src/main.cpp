@@ -7,8 +7,12 @@
 
 
 int main(){
-    Menu menu;
-    menu.menuInitialization();
+    try{
+        Menu menu;
+        menu.menuInitialization();
+    } catch(std::invalid_argument &e){
+        std::cout << e.what() << std::endl;
+    }
 
     return 0;
 }
