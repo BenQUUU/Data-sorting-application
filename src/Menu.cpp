@@ -15,12 +15,20 @@ unsigned int Menu::askForVectorSize(){
     unsigned int size = 0;
     std::cout << "What capacity should a vector have: ";
     std::cin >> size;
+    if(!std::cin.good()){
+        throw std::invalid_argument("Invalid data type!");
+    }
 
     return size;
 }
 
 void Menu::menuInitialization(){
-    unsigned int size = askForVectorSize();
+    unsigned int size = 0;
+    try{
+        size = askForVectorSize();
+    } catch (std::invalid_argument &e){
+        std::cout << e.what() << std::endl;
+    }
 
     DataGenerator dataGenerator(size);
     std::vector<int> originalData = dataGenerator.generate_vector();
