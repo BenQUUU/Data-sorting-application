@@ -1,12 +1,10 @@
-#include <iostream>
 #include "../include/Menu.hpp"
 
 /**
  * /author Michał Kolczak
-*/
+ */
 
-
-int main(){
+int main() {
     Menu menu;
     menu.menuInitialization();
 
