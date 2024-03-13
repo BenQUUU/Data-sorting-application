@@ -3,6 +3,7 @@
 
 #include <cstddef>
 #include <vector>
+#include <random>
 
 class DataGenerator {
 public:
@@ -10,7 +11,7 @@ public:
     std::vector<int> generate_vector();
 
 private:
-    const size_t vector_size;
+    const size_t vectorSize_;
 };
 
 #endif

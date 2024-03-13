@@ -1,8 +1,4 @@
 #include "../include/Menu.hpp"
-#include <chrono>
-#include <iostream>
-#include <string>
-#include <vector>
 #include "../include/BubbleSort.hpp"
 #include "../include/CountingSort.hpp"
 #include "../include/DataGenerator.hpp"
@@ -11,10 +7,11 @@
 #include "../include/QuickSort.hpp"
 #include "../include/SortBase.hpp"
 
-unsigned int Menu::askForVectorSize() {
-    unsigned int size = 0;
+size_t Menu::askForVectorSize_() {
+    size_t size = 0;
     std::cout << "What capacity should a vector have: ";
     std::cin >> size;
+
     if (!std::cin.good()) {
         throw std::invalid_argument("Invalid data type!");
     }
@@ -23,7 +20,7 @@ unsigned int Menu::askForVectorSize() {
 }
 
 void Menu::menuInitialization() {
-    unsigned int size = 0;
+    size_t size = 0;
     try {
         size = askForVectorSize();
     } catch (std::invalid_argument& e) {
@@ -39,9 +36,9 @@ void Menu::menuInitialization() {
     CountingSort<int> countingSort;
     HeapSort<int> heapSort;
 
-    std::vector<SortBase<int>*> algorithms = {&bubbleSort, &quickSort, &mergeSort, &countingSort, &heapSort};
+    std::vector<SortBase<int>*> algorithms {&bubbleSort, &quickSort, &mergeSort, &countingSort, &heapSort};
 
-    for (SortBase<int>* algorithm : algorithms) {
+    for (const auto& algorithm : algorithms) {
         std::vector<int> data = originalData;
         auto start = std::chrono::high_resolution_clock::now();
         algorithm->sort(data);

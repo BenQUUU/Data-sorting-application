@@ -1,18 +1,17 @@
 #include "../include/DataGenerator.hpp"
-#include <random>
-#include <vector>
+
 
 DataGenerator::DataGenerator(size_t size)
-    : vector_size(size) {}
+    : vectorSize_(size) {}
 
 std::vector<int> DataGenerator::generate_vector() {
-    std::vector<int> data(vector_size);
+    std::vector<int> data(vectorSize_);
 
     std::random_device rd;
     std::mt19937 generator(rd());
     std::uniform_int_distribution<int> distribution(1, 1000);  // numbers 1 - 1000
 
-    for (size_t i = 0; i < vector_size; i++) {
+    for (size_t i = 0; i < vectorSize_; i++) {
         int number = distribution(generator);
         data.push_back(number);
     }
