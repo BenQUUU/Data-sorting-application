@@ -5,7 +5,8 @@ DataGenerator::DataGenerator(size_t size)
     : vectorSize_(size) {}
 
 std::vector<int> DataGenerator::generate_vector() {
-    std::vector<int> data(vectorSize_);
+    std::vector<int> data;
+    data.reserve(vectorSize_);
 
     std::random_device rd;
     std::mt19937 generator(rd());
