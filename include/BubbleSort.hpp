@@ -20,11 +20,10 @@ std::string BubbleSort<T>::getName() const {
 template <class T>
 void BubbleSort<T>::sort(std::vector<T>& arr) {
     int n = arr.size();
-    std::vector<T> new_arr = arr;
     for (size_t i = 0; i < n - 1; i++) {
         for (size_t j = 0; j < n - i - 1; j++) {
-            if (new_arr[j] > new_arr[j + 1]) {
-                std::swap(new_arr[j], new_arr[j + 1]);
+            if (arr[j] > arr[j + 1]) {
+                std::swap(arr[j], arr[j + 1]);
             }
         }
     }
