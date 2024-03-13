@@ -2,6 +2,7 @@
 
 #include <BubbleSort.hpp>
 #include <CountingSort.hpp>
+#include <DataGenerator.hpp>
 #include <HeapSort.hpp>
 #include <MergeSort.hpp>
 #include <QuickSort.hpp>
@@ -54,5 +55,14 @@ TEST_F(AlgorithmsTest, QuickSortTestPassed) {
     quick_sort.sort(testVector);
 
     EXPECT_EQ(vSorted, testVector);
+}
+
+TEST(CheckVectorSize, SizeOfContainerPassed) {
+    DataGenerator dataGenerator(100);
+    std::vector<int> originalData = dataGenerator.generate_vector();
+
+    auto expected = originalData.size();
+
+    EXPECT_EQ(100, expected);
 }
 
