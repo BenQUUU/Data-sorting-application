@@ -22,7 +22,7 @@ size_t Menu::askForVectorSize_() {
 void Menu::menuInitialization() {
     size_t size = 0;
     try {
-        size = askForVectorSize();
+        size = askForVectorSize_();
     } catch (std::invalid_argument& e) {
         std::cout << e.what() << std::endl;
     }
